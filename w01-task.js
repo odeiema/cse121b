@@ -1,11 +1,11 @@
 // 🔍 Part 1 error
-const userName = "odie";
+let userName = "Morini";
 console.log(`Username: ${userName}`);
-userName = "odiema";
+userName = "Moroni";
 console.log(`Username: ${userName}`);
 
 // 🔍 Part 2 error
-const currentDateAndTime = DateTime;
+const currentDateAndTime = date ();
 console.log(`It is now ${currentDateAndTime}`);
 
 // 🔍 Part 3 error. The following statement calls a function named total that accepts any number of arguments and returns the sum. The returned value is stored in a variable named theTotal. 1-10 are the arguments.
