@@ -1,0 +1,6 @@
+[
+    { "id": 1, "name": "Apple", "yarnColor1": "Red", "needleSize": 4.5 },
+    { "id": 2, "name": "Whale", "yarnColor1": "Blue", "needleSize": 4.25 },
+    { "id": 3, "name": "Unicorn", "yarnColor1": "Pink", "yarnColor2": "Purple", "needleSize": 4.25 }
+  ]
+  

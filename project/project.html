@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crochet Project Material Finder</title>
+</head>
+<body>
+  <h1>Crochet Projects</h1>
+  <label for="projectSelect">Select Crochet Project:</label>
+  <select id="projectSelect">
+    <option value="1">Apple</option>
+    <option value="2">Whale</option>
+    <option value="3">Unicorn</option>
+  </select>
+  <button onclick="getMaterials()">Get Materials</button>
+  <div id="result"></div>
+
+  <script>
+    function getMaterials() {
+      const projectSelect = document.getElementById('projectSelect');
+      const projectId = projectSelect.value;
+
+      // Fetching project data
+      fetch('projects.json')
+        .then(response => response.json())
+        .then(data => {
+          const selectedProject = data.find(project => project.id === parseInt(projectId));
+
+          if (selectedProject) {
+            const { name, yarnColor1, yarnColor2, needleSize } = selectedProject;
+            const resultDiv = document.getElementById('result');
+
+            resultDiv.innerHTML = `
+              <p>For ${name} project, you will need:</p>
+              <ul>
+                <li>${yarnColor1} yarn</li>
+                ${yarnColor2 ? `<li>${yarnColor2} yarn</li>` : ''}
+                <li>${needleSize}mm crochet needle</li>
+              </ul>
+            `;
+          } else {
+            alert('Invalid project selection');
+          }
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    }
+  </script>
+</body>
+</html>
